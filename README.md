@@ -5,7 +5,7 @@ A professional-grade financial analysis tool built with **Python** and **Streaml
 This project goes beyond simple line-fitting by implementing a **"Leakage-Free"** data pipeline, ensuring that the model is trained strictly on past data without "peeking" into the future (a common pitfall in financial AI).
 
 ## 🚀 Live Demo
-**[Click here to view the App](ΤΟ_LINK_ΤΟΥ_STREAMLIT_ΣΟΥ_ΕΔΩ)**
+**[Click here to view the App](https://trade-vision.streamlit.app/)**
 
 ## ✨ Key Features
 
@@ -64,4 +64,5 @@ This application is for **educational and research purposes only**. It uses hist
 Feel free to fork this repository and submit pull requests.
 
 ## 📜 License
+
 This project is open-source.
