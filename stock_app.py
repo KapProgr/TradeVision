@@ -15,7 +15,7 @@ warnings.filterwarnings('ignore')
 # Page configuration
 st.set_page_config(
     page_title="AI Stock Predictor",
-    page_icon="📈",
+    page_icon="AI",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -64,7 +64,7 @@ st.markdown("""
 
 # Popular stock tickers with IPO dates
 POPULAR_STOCKS = {
-    "🇺🇸 US Tech Giants": {
+    "US Tech Giants": {
         "Apple": {"ticker": "AAPL", "ipo": "1980-12-12"},
         "Microsoft": {"ticker": "MSFT", "ipo": "1986-03-13"},
         "Google": {"ticker": "GOOGL", "ipo": "2004-08-19"},
@@ -84,7 +84,7 @@ POPULAR_STOCKS = {
         "Spotify": {"ticker": "SPOT", "ipo": "2018-04-03"},
         "Zoom": {"ticker": "ZM", "ipo": "2019-04-18"}
     },
-    "🇺🇸 US Finance": {
+    "US Finance": {
         "JPMorgan Chase": {"ticker": "JPM", "ipo": "1969-03-05"},
         "Bank of America": {"ticker": "BAC", "ipo": "1972-01-01"},
         "Goldman Sachs": {"ticker": "GS", "ipo": "1999-05-04"},
@@ -96,7 +96,7 @@ POPULAR_STOCKS = {
         "American Express": {"ticker": "AXP", "ipo": "1977-05-18"},
         "BlackRock": {"ticker": "BLK", "ipo": "1999-10-01"}
     },
-    "🇺🇸 US Consumer": {
+    "US Consumer": {
         "Coca-Cola": {"ticker": "KO", "ipo": "1919-09-05"},
         "Pepsi": {"ticker": "PEP", "ipo": "1972-06-08"},
         "McDonald's": {"ticker": "MCD", "ipo": "1965-04-21"},
@@ -108,7 +108,7 @@ POPULAR_STOCKS = {
         "Costco": {"ticker": "COST", "ipo": "1985-12-05"},
         "Home Depot": {"ticker": "HD", "ipo": "1981-09-22"}
     },
-    "🇺🇸 US Healthcare": {
+    "US Healthcare": {
         "Johnson & Johnson": {"ticker": "JNJ", "ipo": "1944-09-25"},
         "Pfizer": {"ticker": "PFE", "ipo": "1972-06-22"},
         "UnitedHealth": {"ticker": "UNH", "ipo": "1984-10-18"},
@@ -117,33 +117,33 @@ POPULAR_STOCKS = {
         "Moderna": {"ticker": "MRNA", "ipo": "2018-12-07"},
         "CVS Health": {"ticker": "CVS", "ipo": "1996-03-01"}
     },
-    "🇺🇸 US Energy": {
+    "US Energy": {
         "ExxonMobil": {"ticker": "XOM", "ipo": "1970-01-01"},
         "Chevron": {"ticker": "CVX", "ipo": "1970-01-01"},
         "ConocoPhillips": {"ticker": "COP", "ipo": "1929-01-01"},
         "NextEra Energy": {"ticker": "NEE", "ipo": "1984-05-01"}
     },
-    "🇬🇷 Greek Stocks": {
-        "ΟΠΑΠ": {"ticker": "OPAP.AT", "ipo": "2001-05-31"},
+    "Greek Stocks": {
+        "OPAP": {"ticker": "OPAP.AT", "ipo": "2001-05-31"},
         "Alpha Bank": {"ticker": "ALPHA.AT", "ipo": "1991-11-13"},
-        "Εθνική Τράπεζα": {"ticker": "ETE.AT", "ipo": "1880-01-01"},
-        "ΔΕΗ": {"ticker": "PPC.AT", "ipo": "2001-12-14"},
+        "National Bank of Greece": {"ticker": "ETE.AT", "ipo": "1880-01-01"},
+        "PPC": {"ticker": "PPC.AT", "ipo": "2001-12-14"},
         "Eurobank": {"ticker": "EUROB.AT", "ipo": "1999-10-21"},
-        "Μυτιληναίος": {"ticker": "MYTIL.AT", "ipo": "1995-12-20"},
-        "ΟΤΕ": {"ticker": "OTE.AT", "ipo": "1996-12-19"},
-        "Τιτάν": {"ticker": "TITC.AT", "ipo": "1912-01-01"},
+        "Mytilineos": {"ticker": "MYTIL.AT", "ipo": "1995-12-20"},
+        "OTE": {"ticker": "OTE.AT", "ipo": "1996-12-19"},
+        "Titan": {"ticker": "TITC.AT", "ipo": "1912-01-01"},
         "Jumbo": {"ticker": "BELA.AT", "ipo": "1999-07-06"},
-        "Ελληνικά Πετρέλαια": {"ticker": "ELPE.AT", "ipo": "1998-06-30"},
+        "Hellenic Petroleum": {"ticker": "ELPE.AT", "ipo": "1998-06-30"},
         "Motor Oil": {"ticker": "MOH.AT", "ipo": "2001-07-20"},
         "Coca-Cola HBC": {"ticker": "EEEK.AT", "ipo": "2000-08-02"}
     },
-    "💰 Crypto & Commodities": {
+    "Crypto & Commodities": {
         "Bitcoin ETF": {"ticker": "BITO", "ipo": "2021-10-19"},
         "Ethereum ETF": {"ticker": "EETH", "ipo": "2023-10-02"},
         "Gold ETF (GLD)": {"ticker": "GLD", "ipo": "2004-11-18"},
         "Silver ETF (SLV)": {"ticker": "SLV", "ipo": "2006-04-28"}
     },
-    "🌍 International": {
+    "International": {
         "Alibaba (China)": {"ticker": "BABA", "ipo": "2014-09-19"},
         "Samsung (Korea)": {"ticker": "005930.KS", "ipo": "1975-06-11"},
         "Toyota (Japan)": {"ticker": "TM", "ipo": "1949-05-16"},
@@ -417,56 +417,56 @@ def get_currency_symbol(ticker):
 
 # Main App
 def main():
-    st.markdown("<h1>📈 AI Stock Price Predictor</h1>", unsafe_allow_html=True)
+    st.markdown("<h1>AI Stock Price Predictor</h1>", unsafe_allow_html=True)
     
     # Sidebar
     with st.sidebar:
-        st.title("⚙️ Ρυθμίσεις Ανάλυσης")
+        st.title("Analysis Settings")
         
         # Stock Selection
-        st.subheader("📊 Επιλογή Μετοχής")
+        st.subheader("Stock Selection")
         
-        custom_ticker = st.text_input("Ή πληκτρολογήστε σύμβολο (ticker):", placeholder="π.χ. GOOGL, MSFT")
+        custom_ticker = st.text_input("Or enter a custom ticker symbol:", placeholder="e.g. GOOGL, MSFT")
         use_custom_ticker = bool(custom_ticker)
 
-        category = st.selectbox("Κατηγορία", list(POPULAR_STOCKS.keys()), disabled=use_custom_ticker)
-        stock_name = st.selectbox("Μετοχή", list(POPULAR_STOCKS[category].keys()), disabled=use_custom_ticker)
+        category = st.selectbox("Category", list(POPULAR_STOCKS.keys()), disabled=use_custom_ticker)
+        stock_name = st.selectbox("Stock", list(POPULAR_STOCKS[category].keys()), disabled=use_custom_ticker)
         
         if custom_ticker:
             ticker = custom_ticker.upper()
             ipo_date = "1970-01-01"  
-            st.info(f"**Επιλεγμένο Σύμβολο:** {ticker}")
+            st.info(f"**Selected Symbol:** {ticker}")
         else:
             selected_stock = POPULAR_STOCKS[category][stock_name]
             ticker = selected_stock["ticker"]
             ipo_date = selected_stock["ipo"]
-            st.info(f"**{stock_name}** ({ticker})\n\n📅 IPO: {ipo_date}")
+            st.info(f"**{stock_name}** ({ticker})\n\nIPO Date: {ipo_date}")
         
         currency_symbol = get_currency_symbol(ticker)
         
         st.markdown("---")
         
         # Date Range
-        st.subheader("📅 Χρονικό Διάστημα")
+        st.subheader("Date Range")
         
         # Preset options
         preset = st.radio(
-            "Επιλέξτε περίοδο δεδομένων:",
-            ["⚡ Γρήγορο (3 έτη - Προτείνεται)", "⚖️ Ισορροπημένο (5 έτη)", "🎯 Μέγιστο (Πλήρες ιστορικό)", "🔧 Προσαρμοσμένο"],
-            help="Τα 3 έτη είναι ιδανικά για τις περισσότερες μετοχές - γρήγορη εκπαίδευση με καλή ακρίβεια."
+            "Choose data period:",
+            ["Fast (3 years - Recommended)", "Balanced (5 years)", "Maximum (Full history)", "Custom"],
+            help="3 years is ideal for most stocks: fast training with strong accuracy."
         )
         
-        if preset == "⚡ Γρήγορο (3 έτη - Προτείνεται)":
+        if preset == "Fast (3 years - Recommended)":
             start_date = pd.to_datetime("today") - pd.DateOffset(years=3)
             end_date = pd.to_datetime("today")
-            st.success("📊 Χρήση δεδομένων **3 ετών** (~750 ημέρες) ⚡ Εκπαίδευση: ~30-45 δευτερόλεπτα")
+            st.success("Using **3 years** of data (~750 days). Estimated training time: ~30-45 seconds.")
             
-        elif preset == "⚖️ Ισορροπημένο (5 έτη)":
+        elif preset == "Balanced (5 years)":
             start_date = pd.to_datetime("today") - pd.DateOffset(years=5)
             end_date = pd.to_datetime("today")
-            st.info("📊 Χρήση δεδομένων **5 ετών** (~1250 ημέρες) ⚖️ Εκπαίδευση: ~1-2 λεπτά")
+            st.info("Using **5 years** of data (~1250 days). Estimated training time: ~1-2 minutes.")
             
-        elif preset == "🎯 Μέγιστο (Πλήρες ιστορικό)":
+        elif preset == "Maximum (Full history)":
             try:
                 start_date_default = pd.to_datetime(ipo_date)
                 start_date_default = start_date_default + pd.DateOffset(years=1)
@@ -479,21 +479,21 @@ def main():
             days_diff = (end_date - start_date).days
             
             if days_diff > 2000:
-                st.warning(f"⚠️ Μεγάλο σύνολο δεδομένων: **{days_diff} ημέρες** (~{days_diff//252} έτη). Εκπαίδευση: 3-5+ λεπτά")
+                st.warning(f"Large dataset: **{days_diff} days** (~{days_diff//252} years). Training may take 3-5+ minutes.")
             else:
-                st.info(f"📊 Χρήση **πλήρους ιστορικού**: {days_diff} ημέρες")
+                st.info(f"Using **full history**: {days_diff} days")
                 
         else:  # Custom
             col1, col2 = st.columns(2)
             with col1:
-                start_date = st.date_input("Ημερομηνία Έναρξης", pd.to_datetime("2022-01-01"))
+                start_date = st.date_input("Start Date", pd.to_datetime("2022-01-01"))
             with col2:
-                end_date = st.date_input("Ημερομηνία Λήξης", pd.to_datetime("today"))
+                end_date = st.date_input("End Date", pd.to_datetime("today"))
         
         st.markdown("---")
         
         # Model Parameters
-        st.subheader("🧠 Παράμετροι Μοντέλου")
+        st.subheader("Model Parameters")
         
         lookback = st.slider("Lookback Days", 20, 120, 60, 10,
                             help="Number of past days to consider")
@@ -509,7 +509,7 @@ def main():
         st.markdown("---")
         
         # LSTM Architecture
-        st.subheader("🏗️ Αρχιτεκτονική LSTM")
+        st.subheader("LSTM Architecture")
         
         units_1 = st.slider("Layer 1 Units", 50, 200, 100, 25)
         units_2 = st.slider("Layer 2 Units", 50, 200, 100, 25)
@@ -519,13 +519,13 @@ def main():
         st.markdown("---")
         
         # Prediction
-        st.subheader("🔮 Μελλοντική Πρόβλεψη")
+        st.subheader("Future Forecast")
         prediction_days = st.slider("Days to Predict", 7, 90, 30, 7)
         
         st.markdown("---")
         
         # Features Selection
-        st.subheader("📊 Features για Ανάλυση")
+        st.subheader("Features for Analysis")
         all_features = ['Close', 'Volume', 'MA7', 'MA21', 'MA50', 'RSI', 'MACD']
         features = st.multiselect(
             "Select Features",
@@ -539,7 +539,7 @@ def main():
         
         st.markdown("---")
         
-        run_button = st.button("🚀 Run Analysis", use_container_width=True)
+        run_button = st.button("Run Analysis", use_container_width=True)
     
     # Main Content
     if run_button:
@@ -548,10 +548,10 @@ def main():
              data = predictor.fetch_data(ticker, start_date, end_date)
 
         if data is None or len(data) < 100:
-            st.error("❌ Not enough data! Try different dates or stock.")
+            st.error("Not enough data. Try different dates or another stock.")
             return
         
-        st.success(f"✅ Fetched {len(data)} days of data for {ticker}")
+        st.success(f"Fetched {len(data)} days of data for {ticker}")
         
         # --- Start of Processing ---
         status_placeholder = st.empty()
@@ -578,10 +578,10 @@ def main():
                 last_date = data.index[-1]
                 future_dates = pd.date_range(start=last_date, periods=prediction_days + 1)[1:]
         
-        status_placeholder.success("✅ Analysis Complete!")
+        status_placeholder.success("Analysis complete.")
 
         # --- Display Results in Tabs ---
-        tab1, tab2, tab3, tab4 = st.tabs(["📊 Technical Analysis", "🎯 Model Performance", "📈 Predictions vs Actual", "🔮 Future Forecast"])
+        tab1, tab2, tab3, tab4 = st.tabs(["Technical Analysis", "Model Performance", "Predictions vs Actual", "Future Forecast"])
 
         with tab1:
             st.subheader(f"Current Metrics for {ticker}")
@@ -657,11 +657,11 @@ def main():
             c4.metric("Expected % Change", f"{pct_change:+.2f}%")
 
             if pct_change > 5:
-                st.success(f"🟢 **Bullish Signal**: The model predicts a significant increase of {pct_change:.2f}% over the next {prediction_days} days.")
+                st.success(f"**Bullish Signal**: The model predicts a significant increase of {pct_change:.2f}% over the next {prediction_days} days.")
             elif pct_change < -5:
-                st.error(f"🔴 **Bearish Signal**: The model predicts a significant decrease of {pct_change:.2f}% over the next {prediction_days} days.")
+                st.error(f"**Bearish Signal**: The model predicts a significant decrease of {pct_change:.2f}% over the next {prediction_days} days.")
             else:
-                st.info(f"🟡 **Neutral Signal**: The model predicts a relatively stable change of {pct_change:.2f}% over the next {prediction_days} days.")
+                st.info(f"**Neutral Signal**: The model predicts a relatively stable change of {pct_change:.2f}% over the next {prediction_days} days.")
 
             st.subheader("Detailed Forecast Data")
             forecast_df = pd.DataFrame({
@@ -671,7 +671,7 @@ def main():
             })
             st.dataframe(forecast_df, use_container_width=True, hide_index=True)
 
-            st.warning("⚠️ **Disclaimer**: This is an AI prediction tool for educational purposes. Always conduct your own research and consult financial advisors before making investment decisions.")
+            st.warning("**Disclaimer**: This AI prediction tool is for educational use only. Always do your own research and consult a financial advisor before making investment decisions.")
 
 if __name__ == "__main__":
     main()
