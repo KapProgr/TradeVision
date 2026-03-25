@@ -1,4 +1,4 @@
-# MarketMind AI: Intelligent Stock Forecasting System
+# TradeVision: Intelligent Stock Forecasting System
 
 A professional-grade financial analysis tool built with **Python** and **Streamlit**. It leverages **Deep Learning (LSTM Neural Networks)** to analyze historical market data, calculate technical indicators, and predict future price movements with high precision.
 
