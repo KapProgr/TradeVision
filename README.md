@@ -30,8 +30,8 @@ This project goes beyond simple line-fitting by implementing a **"Leakage-Free"*
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/KapProgr/marketmind-ai.git](https://github.com/KapProgr/marketmind-ai.git)
-    cd marketmind-ai
+    git clone [https://github.com/KapProgr/TradeVision.git](https://github.com/KapProgr/TradeVision.git)
+    cd TradeVision
     ```
 
 2.  **Install dependencies:**
